@@ -1,0 +1,77 @@
+# Top-level .gitignore for the `flight-agent` project
+# Keep source and config files; ignore local, build, and sensitive files.
+
+# Environment
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+.Python
+env/
+venv/
+.venv/
+venv*/
+pip-wheel-metadata/
+dist/
+build/
+*.egg-info/
+
+# Docker
+docker-compose.override.yml
+**/docker-compose.override.yml
+
+# Flutter / Dart
+**/build/
+/.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+flutter_export_environment.sh
+.metadata
+.pub/
+
+# iOS
+**/ios/Pods/
+**/ios/Flutter/.last_build_id
+**/ios/Runner.xcworkspace/
+
+# Android
+**/android/.gradle/
+**/android/app/build/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.iml
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Ignore generated data and model caches
+data/
+
+# Explicitly ignore individual services too
+data/chroma/
+data/minio/
+data/ollama/
+data/postgres/
+data/redis/
+
+
+# Docker
+.docker/
+
