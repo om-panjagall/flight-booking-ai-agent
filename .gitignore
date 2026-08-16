@@ -62,7 +62,7 @@ logs/
 htmlcov/
 
 # Ignore generated data and model caches
-data/
+# data/
 
 # Explicitly ignore individual services too
 data/chroma/
