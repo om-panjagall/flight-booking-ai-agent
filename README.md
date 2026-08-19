@@ -50,7 +50,7 @@ FastAPI
    ▼
 Flutter
 
-**🏗️ System Architecture**
+* 🏗️ System Architecture
 
 ┌─────────────────────────────────────────────────────────┐
 │                    Flutter Frontend                     │
@@ -95,7 +95,7 @@ Flutter
                               └─────────────────────┘
 
 
-**🔄 Complete Request Flow**
+🔄 **Complete Request Flow**
 
 For a request such as:
 
