@@ -50,7 +50,7 @@ The AI agent understands the request, identifies the required flight-search para
       ▼
    Flutter
 
- 🏗️ **System Architecture**
+ # 🏗️ System Architecture
 
 ┌─────────────────────────────────────────────────────────┐
 │                    Flutter Frontend                     │
@@ -95,7 +95,7 @@ The AI agent understands the request, identifies the required flight-search para
                               └─────────────────────┘
 
 
-🔄 **Complete Request Flow**
+# 🔄 Complete Request Flow
 
    For a request such as:
    
@@ -159,7 +159,7 @@ The AI agent understands the request, identifies the required flight-search para
        ▼
    20. Display response to user
 
-📋 **Project Components**
+# 📋 Project Components
    
    ┌──────────────────────────────────────────────┐
    │                  PROJECT                     │
@@ -200,7 +200,7 @@ The AI agent understands the request, identifies the required flight-search para
    │                                              │
    └──────────────────────────────────────────────┘
 
-📌 **Quick Start**
+# 📌 Quick Start
 
    # Clone
    git clone https://github.com/om-panjagall/flight-booking-ai-agent.git
