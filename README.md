@@ -14,43 +14,43 @@ The AI agent understands the request, identifies the required flight-search para
 
 # 📌 Project Status
 
-> 🚧 **Active Development**
+ 🚧 **Active Development**
 
-The current version focuses on the AI-powered conversational flight-search workflow.
+   The current version focuses on the AI-powered conversational flight-search workflow.
+   
+   Current core flow:
+   
+   ```text
+   Flutter
+      │
+      ▼
+   FastAPI
+      │
+      ▼
+   LangGraph AI Agent
+      │
+      ▼
+   Ollama / Qwen
+      │
+      ▼
+   Flight Search Tool
+      │
+      ▼
+   PostgreSQL
+      │
+      ▼
+   Flight Results
+      │
+      ▼
+   Ollama / Qwen
+      │
+      ▼
+   FastAPI
+      │
+      ▼
+   Flutter
 
-Current core flow:
-
-```text
-Flutter
-   │
-   ▼
-FastAPI
-   │
-   ▼
-LangGraph AI Agent
-   │
-   ▼
-Ollama / Qwen
-   │
-   ▼
-Flight Search Tool
-   │
-   ▼
-PostgreSQL
-   │
-   ▼
-Flight Results
-   │
-   ▼
-Ollama / Qwen
-   │
-   ▼
-FastAPI
-   │
-   ▼
-Flutter
-
-* 🏗️ System Architecture
+ 🏗️ **System Architecture**
 
 ┌─────────────────────────────────────────────────────────┐
 │                    Flutter Frontend                     │
@@ -97,127 +97,127 @@ Flutter
 
 🔄 **Complete Request Flow**
 
-For a request such as:
+   For a request such as:
+   
+   Find flights from DXB to BLR
+   1. User
+      │
+      ▼
+   2. Flutter AI Search Screen
+      │
+      ▼
+   3. HTTP POST /api/v1/ai/chat
+      │
+      ▼
+   4. FastAPI AI Route
+      │
+      ▼
+   5. AIAgent.ask()
+      │
+      ▼
+   6. LangGraph
+      │
+      ▼
+   7. Ollama / Qwen
+      │
+      ▼
+   8. AI determines that flight search is required
+      │
+      ▼
+   9. Tool-call validation
+      │
+      ▼
+   10. search_flights tool
+       │
+       ▼
+   11. Flight Service
+       │
+       ▼
+   12. SQLAlchemy
+       │
+       ▼
+   13. PostgreSQL
+       │
+       ▼
+   14. Flight Results
+       │
+       ▼
+   15. LangGraph
+       │
+       ▼
+   16. Ollama / Qwen
+       │
+       ▼
+   17. Natural-language response
+       │
+       ▼
+   18. FastAPI
+       │
+       ▼
+   19. Flutter
+       │
+       ▼
+   20. Display response to user
 
-Find flights from DXB to BLR
-1. User
-   │
-   ▼
-2. Flutter AI Search Screen
-   │
-   ▼
-3. HTTP POST /api/v1/ai/chat
-   │
-   ▼
-4. FastAPI AI Route
-   │
-   ▼
-5. AIAgent.ask()
-   │
-   ▼
-6. LangGraph
-   │
-   ▼
-7. Ollama / Qwen
-   │
-   ▼
-8. AI determines that flight search is required
-   │
-   ▼
-9. Tool-call validation
-   │
-   ▼
-10. search_flights tool
-    │
-    ▼
-11. Flight Service
-    │
-    ▼
-12. SQLAlchemy
-    │
-    ▼
-13. PostgreSQL
-    │
-    ▼
-14. Flight Results
-    │
-    ▼
-15. LangGraph
-    │
-    ▼
-16. Ollama / Qwen
-    │
-    ▼
-17. Natural-language response
-    │
-    ▼
-18. FastAPI
-    │
-    ▼
-19. Flutter
-    │
-    ▼
-20. Display response to user
+📋 **Project Components**
+   
+   ┌──────────────────────────────────────────────┐
+   │                  PROJECT                     │
+   ├──────────────────────────────────────────────┤
+   │                                              │
+   │  Flutter Frontend                            │
+   │      │                                       │
+   │      ▼                                       │
+   │  FastAPI Backend                             │
+   │      │                                       │
+   │      ├── AI Routes                           │
+   │      ├── Flight Routes                       │
+   │      └── Application Services                │
+   │                                              │
+   │  AI Layer                                    │
+   │      │                                       │
+   │      ├── LangGraph                           │
+   │      ├── LangChain                           │
+   │      ├── Agent                               │
+   │      ├── Prompt                              │
+   │      ├── Memory                              │
+   │      └── Tool Calling                        │
+   │                                              │
+   │  LLM Layer                                   │
+   │      │                                       │
+   │      └── Ollama / Qwen 2.5 3B              │
+   │                                              │
+   │  Data Layer                                  │
+   │      │                                       │
+   │      ├── SQLAlchemy                          │
+   │      ├── Flight Service                      │
+   │      └── PostgreSQL                          │
+   │                                              │
+   │  Infrastructure                              │
+   │      │                                       │
+   │      ├── Docker                              │
+   │      └── Docker Compose                      │
+   │                                              │
+   └──────────────────────────────────────────────┘
 
-**📋 Project Components**
+📌 **Quick Start**
 
-┌──────────────────────────────────────────────┐
-│                  PROJECT                     │
-├──────────────────────────────────────────────┤
-│                                              │
-│  Flutter Frontend                            │
-│      │                                       │
-│      ▼                                       │
-│  FastAPI Backend                             │
-│      │                                       │
-│      ├── AI Routes                           │
-│      ├── Flight Routes                       │
-│      └── Application Services                │
-│                                              │
-│  AI Layer                                    │
-│      │                                       │
-│      ├── LangGraph                           │
-│      ├── LangChain                           │
-│      ├── Agent                               │
-│      ├── Prompt                              │
-│      ├── Memory                              │
-│      └── Tool Calling                        │
-│                                              │
-│  LLM Layer                                   │
-│      │                                       │
-│      └── Ollama / Qwen 2.5 3B              │
-│                                              │
-│  Data Layer                                  │
-│      │                                       │
-│      ├── SQLAlchemy                          │
-│      ├── Flight Service                      │
-│      └── PostgreSQL                          │
-│                                              │
-│  Infrastructure                              │
-│      │                                       │
-│      ├── Docker                              │
-│      └── Docker Compose                      │
-│                                              │
-└──────────────────────────────────────────────┘
-
-**📌 Quick Start**
-
-# Clone
-git clone https://github.com/om-panjagall/flight-booking-ai-agent.git
-
-# Start backend services
-docker compose up -d --build
-
-# Check services
-docker compose ps
-
-# Check Ollama
-docker exec ollama ollama list
-
-# Check loaded model
-docker exec ollama ollama ps
-
-# View backend logs
+   # Clone
+   git clone https://github.com/om-panjagall/flight-booking-ai-agent.git
+   
+   # Start backend services
+   docker compose up -d --build
+   
+   # Check services
+   docker compose ps
+   
+   # Check Ollama
+   docker exec ollama ollama list
+   
+   # Check loaded model
+   docker exec ollama ollama ps
+   
+   # View backend logs
 docker compose logs -f flight_backend
 
 # View Ollama logs
